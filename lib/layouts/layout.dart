@@ -1,9 +1,12 @@
-
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:kora/layouts/cubit/states.dart';
+import 'package:kora/shared/styles/colors.dart';
+
+import 'cubit/cubit.dart';
 
 class HomeScreen extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     //  return Scaffold(
@@ -14,8 +17,7 @@ class HomeScreen extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(create: (context) => AppCubit()),
-        BlocProvider(
-            create: (context) => CategoryCubit()..getCategory(context)),
+
         // BlocProvider(create: (context) => ProfileCubit()..getProfile(USERID!)),
       ],
       child: BlocConsumer<AppCubit, AppStates>(
@@ -29,15 +31,11 @@ class HomeScreen extends StatelessWidget {
               index: cubit.currentIndex,
               items: const <Widget>[
                 Icon(
-                  Icons.home,
+                  Icons.live_tv,
                   size: 30,
                 ),
                 Icon(
-                  Icons.favorite,
-                  size: 30,
-                ),
-                Icon(
-                  Icons.person,
+                  Icons.sports_football_outlined,
                   size: 30,
                 ),
               ],
