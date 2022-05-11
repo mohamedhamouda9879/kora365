@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:kora/modules/login/login.dart';
+import 'package:kora/layouts/layout.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,7 +12,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: LoginScreen(),
+      debugShowCheckedModeBanner: false,
+      home: HomeScreen(),
     );
   }
 }
